@@ -27,10 +27,11 @@ html {
     --header3: calc(3rem + 1vw);
     --header4: calc(2.4rem + 1vw);
     --text: calc(1.5rem + 1vw);
-    --big: calc(2.4rem + 1vw);
+    --big: calc(6rem + 1vw);
     --special-color: #905272;
     --background-color: #414141;
     --gray-text: #525252;
+    scroll-behavior: smooth;
 
 }
 
@@ -167,7 +168,7 @@ nav {
     left: -20%;
     z-index: -1;
     transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
-    animation: plant-entrance 1.5s ease-in-out 0.5s forwards,
+    animation: plant-entrance 1.8s ease-in-out 0.5s forwards,
         plant-shake 2.5s infinite ease alternate-reverse 2s;
     transform-origin: bottom;
     max-height: 80%;
@@ -287,6 +288,74 @@ nav {
 }
 
 
+/* CONTACT SECTION */
+
+.contact {
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-wrapper {
+    flex: 3 1 40rem;
+}
+
+.form-wrapper h2 {
+    margin: 5rem 0rem;
+}
+
+.form-wrapper span {
+    font-size: var(--big);
+    color: var(--special-color)
+}
+
+.form-wrapper label {
+    display: block;
+}
+
+.form-wrapper input {
+    display: block;
+    margin: 3rem 0rem;
+    background: var(--background-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+}
+
+.form-wrapper button {
+    padding: 1rem 8rem;
+    background: var(--special-color);
+    color: white;
+    border: none;
+    width: 100%;
+}
+
+.contact img {
+    flex: 1 1 40rem;
+}
+
+
+/* FOOTER SECTION */
+footer {
+    background: var(--background-color);
+    color: white;
+    display: flex;
+    padding: 3rem 5%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer h4 {
+    flex: 3 1 40rem;
+    font-size: calc(1.4rem+1vw);
+}
+
+footer ul {
+    display: flex;
+    flex: 1 1 40rem;
+    justify-content: space-around;
+    align-items: center;
+}
 
 @media screen and (max-width: 842px) {
     .hero {
@@ -302,6 +371,7 @@ nav {
     .burger {
         position: relative;
         display: block;
+        cursor: pointer;
     }
 
     .burger span {
@@ -333,7 +403,25 @@ nav {
 
     }
 
-    .menu-check {
+    .nav-open {
+        transform: translate(-100%);
+    }
+
+    .toggle .line1 {
+        transform: rotateZ(45deg) translateY(300%);
+        background: white;
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotateZ(-45deg) translateY(-300%);
+        background: white;
+    }
+
+    /* .menu-check {
         display: block;
         position: absolute;
         top: 50%;
@@ -366,7 +454,7 @@ nav {
 
     .menu-check:checked~.burger span:nth-child(3) {
         transform: rotateZ(-45deg) translateY(-300%);
-    }
+    } */
 
 
     /* ABOUT SECITON */
@@ -386,4 +474,29 @@ nav {
         /* height: auto; */
     }
 
+    .contact img {
+        display: none;
+    }
+
+    footer ul {
+        order: 1;
+    }
+
+    footer h4 {
+        order: 2;
+        text-align: center;
+        padding: 1rem;
+    }
+
+}
+
+@media screen and (min-width: 1700px) {
+    html {
+        --header1: 3rem;
+        --header2: 5rem;
+        --header3: 4rem;
+        --header4: 3rem;
+        --text: 3rem;
+        --big: 8rem;
+    }
 }
