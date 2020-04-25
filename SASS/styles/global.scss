@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$primary: #a6b1eb;
+
+section h2 {
+    color: $primary;
+}
+
+.intro {
+    display: flex;
+    @include flex();
+    min-height: 10vh;
+}
+
+button {
+    border: none;
+    font-size: 40px;
+    background: $primary;
+    padding: 1 rem 3rem;
+    transition: all 1s ease;
+    cursor: pointer;
+
+    &:hover {
+        background: rgb(161, 104, 104);
+    }
+}
+
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
